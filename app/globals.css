@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #0e0d0c;
+  --color-gold: #a9843c;
+  --color-gold-light: #cba968;
+  --color-thistle: #4b2e58;
+  --color-saltire: #0065bd;
+  --color-parchment: #f3efe6;
+  --color-charcoal: #2a2a2a;
+  --color-white: #ffffff;
+
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-body: "Inter", Arial, Helvetica, sans-serif;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-thistle: var(--color-thistle);
+  --color-saltire: var(--color-saltire);
+  --color-parchment: var(--color-parchment);
+  --color-charcoal: var(--color-charcoal);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.divider-thistle { display: flex; align-items: center; gap: 0.75rem; }
+.divider-thistle::before, .divider-thistle::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  opacity: 0.5;
+}
