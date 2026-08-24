@@ -81,6 +81,13 @@ export default function JoinCompletePage() {
         return;
       }
 
+      // Fire-and-forget: never let a welcome-email hiccup block onboarding.
+      fetch("/api/welcome-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: draft.email, firstName: draft.firstName }),
+      }).catch(() => {});
+
       localStorage.removeItem("bsc_join_draft");
       setStatus("done");
       setMessage("Welcome to BSC — your profile is ready.");

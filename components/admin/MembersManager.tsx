@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { AdminModal, FieldLabel, inputClass } from "./AdminModal";
-import { Plus } from "lucide-react";
+import { Plus, ShieldCheck } from "lucide-react";
 
 type Member = {
   id: string;
@@ -17,33 +17,67 @@ type Member = {
   hubs: { name: string } | null;
 };
 
+const STAFF_ROLES = [
+  { value: "staff_admin", label: "Staff Admin" },
+  { value: "finance_admin", label: "Finance Admin" },
+  { value: "impact_admin", label: "Impact Admin" },
+  { value: "director", label: "Director" },
+  { value: "super_admin", label: "Super Admin (full access)" },
+];
+
 export function MembersManager({ initialMembers }: { initialMembers: Member[] }) {
   const [members, setMembers] = useState(initialMembers);
   const [open, setOpen] = useState(false);
   const [editing, setEditing] = useState<Member | null>(null);
   const [status, setStatus] = useState("active");
+  const [roles, setRoles] = useState<string[]>([]);
+  const [rolesLoading, setRolesLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [search, setSearch] = useState("");
 
-  function openEdit(m: Member) {
+  async function openEdit(m: Member) {
     setEditing(m);
     setStatus(m.status);
+    setRoles([]);
     setOpen(true);
+    setRolesLoading(true);
+    const supabase = createClient();
+    const { data } = await supabase.from("member_roles").select("role").eq("member_id", m.id);
+    setRoles((data ?? []).map((r) => r.role));
+    setRolesLoading(false);
   }
 
-  async function saveStatus() {
+  function toggleRole(role: string) {
+    setRoles((prev) => (prev.includes(role) ? prev.filter((r) => r !== role) : [...prev, role]));
+  }
+
+  async function saveMember() {
     if (!editing) return;
     setSaving(true);
     const supabase = createClient();
-    const { error } = await supabase.from("members").update({ status }).eq("id", editing.id);
+
+    const { error: statusError } = await supabase.from("members").update({ status }).eq("id", editing.id);
+
+    const { data: existingRoles } = await supabase.from("member_roles").select("role").eq("member_id", editing.id);
+    const currentStaffRoles = (existingRoles ?? []).map((r) => r.role).filter((r) => STAFF_ROLES.some((s) => s.value === r));
+    const toAdd = roles.filter((r) => !currentStaffRoles.includes(r));
+    const toRemove = currentStaffRoles.filter((r) => !roles.includes(r));
+
+    if (toAdd.length > 0) {
+      await supabase.from("member_roles").insert(toAdd.map((role) => ({ member_id: editing.id, role })));
+    }
+    for (const role of toRemove) {
+      await supabase.from("member_roles").delete().eq("member_id", editing.id).eq("role", role);
+    }
+
     setSaving(false);
-    if (!error) {
+    if (!statusError) {
       setMembers((prev) => prev.map((m) => (m.id === editing.id ? { ...m, status } : m)));
       setMessage(`${editing.first_name} ${editing.last_name} updated`);
       setOpen(false);
     } else {
-      setMessage(error.message);
+      setMessage(statusError.message);
     }
   }
 
@@ -60,7 +94,7 @@ export function MembersManager({ initialMembers }: { initialMembers: Member[] })
       <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
         <div>
           <h1 className="font-display text-2xl text-ink">Members &amp; CRM</h1>
-          <p className="text-sm text-charcoal/60 mt-1">Every BSC member, from Join BSC signups onward.</p>
+          <p className="text-sm text-charcoal/60 mt-1">Every BSC member, from Join BSC signups onward. Click Edit to grant admin access.</p>
         </div>
       </div>
 
@@ -114,7 +148,7 @@ export function MembersManager({ initialMembers }: { initialMembers: Member[] })
         </table>
       </div>
 
-      <AdminModal open={open} title="Edit member status" onClose={() => setOpen(false)}>
+      <AdminModal open={open} title="Edit member" onClose={() => setOpen(false)}>
         {editing && (
           <div>
             <p className="text-sm text-charcoal/70 mb-1">{editing.first_name} {editing.last_name}</p>
@@ -125,9 +159,30 @@ export function MembersManager({ initialMembers }: { initialMembers: Member[] })
               <option value="active">Active</option>
               <option value="inactive">Inactive</option>
             </select>
+
+            <div className="mt-5 pt-4 border-t border-ink/10">
+              <div className="flex items-center gap-1.5 mb-2">
+                <ShieldCheck size={14} className="text-thistle" />
+                <FieldLabel>Admin access</FieldLabel>
+              </div>
+              {rolesLoading ? (
+                <p className="text-xs text-charcoal/50">Loading roles…</p>
+              ) : (
+                <div className="space-y-2">
+                  {STAFF_ROLES.map((r) => (
+                    <label key={r.value} className="flex items-center gap-2 text-sm">
+                      <input type="checkbox" checked={roles.includes(r.value)} onChange={() => toggleRole(r.value)} />
+                      {r.label}
+                    </label>
+                  ))}
+                </div>
+              )}
+              <p className="text-xs text-charcoal/40 mt-2">Checking any role above grants this person access to /admin.</p>
+            </div>
+
             <button
-              onClick={saveStatus}
-              disabled={saving}
+              onClick={saveMember}
+              disabled={saving || rolesLoading}
               className="mt-5 w-full rounded-md bg-gold text-ink font-semibold text-sm py-2.5 hover:bg-gold-light disabled:opacity-50"
             >
               {saving ? "Saving…" : "Save changes"}
