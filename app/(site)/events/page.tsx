@@ -67,16 +67,28 @@ export default async function EventsPage() {
                         {bodyText && (
                           <p className="text-sm text-charcoal/70 leading-relaxed whitespace-pre-line mb-4">{bodyText}</p>
                         )}
-                        {registrationUrl && (
-                          <a
-                            href={registrationUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded-sm bg-gold px-5 py-2.5 text-sm font-medium text-ink hover:bg-gold-light transition-colors"
-                          >
-                            <Ticket size={16} /> Register free
-                          </a>
-                        )}
+                        <div className="flex flex-wrap gap-3">
+                          {registrationUrl && (
+                            <a
+                              href={registrationUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 rounded-sm bg-gold px-5 py-2.5 text-sm font-medium text-ink hover:bg-gold-light transition-colors"
+                            >
+                              <Ticket size={16} /> Register free
+                            </a>
+                          )}
+                          {e.location && !e.is_online && (
+                            <a
+                              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(e.location)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 rounded-sm border border-ink/15 px-5 py-2.5 text-sm font-medium text-ink hover:border-gold transition-colors"
+                            >
+                              <MapPin size={16} /> Get directions
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
