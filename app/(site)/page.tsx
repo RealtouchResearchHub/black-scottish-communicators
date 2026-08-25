@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SpeakerMark } from "@/components/SpeakerMark";
 import { ArrowRight } from "lucide-react";
 import { getSiteContent } from "@/lib/site-content";
 
@@ -18,7 +17,9 @@ export default async function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-parchment">
-        <SpeakerMark className="absolute right-[-60px] bottom-[-60px] w-[420px] h-[420px] opacity-[0.06] pointer-events-none text-gold" />
+        <div className="hidden md:block absolute right-6 top-1/2 -translate-y-1/2 w-[340px] h-[340px] opacity-60 pointer-events-none">
+          <Image src={content.logo_url || "/brand/logo.png"} alt="" width={340} height={340} className="w-full h-full object-contain" />
+        </div>
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8 py-24 sm:py-32">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-8">
