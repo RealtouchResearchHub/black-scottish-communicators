@@ -78,16 +78,16 @@ export default async function HomePage() {
               Real conversations. A room that gets it.
             </h2>
             <p className="text-parchment/70 leading-relaxed max-w-md">
-              BSC brings together Black professionals, creatives, communicators
-              and emerging leaders from across Scotland - city ambassadors,
-              mentors and members, in the same room, building something
-              together.
+              From BSC's first-ever meeting in Glasgow - communications
+              training, real networking, and mentors in the room. Black
+              professionals, creatives, communicators and emerging leaders
+              from across Scotland, building something together.
             </p>
           </div>
           <div className="relative rounded-lg overflow-hidden aspect-[3/2]">
             <Image
-              src="/images/community-gathering.jpg"
-              alt="BSC members and ambassadors in conversation"
+              src="/images/event-speaking-session.jpg"
+              alt="Communications training session at BSC's first meeting in Glasgow"
               fill
               className="object-cover"
             />
