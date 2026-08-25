@@ -40,9 +40,9 @@ export async function POST(req: NextRequest) {
                   </table>
                   <p>BSC uses secure, passwordless sign-in — no password to remember. Just visit the Member Login page, enter this email, and we'll send you a one-time secure link.</p>
                   <p style="margin-top:24px;">
-                    <a href="https://blackscottishcommunicators.netlify.app/login" style="background:#a9843c;color:#0e0d0c;text-decoration:none;padding:12px 22px;border-radius:6px;font-weight:bold;display:inline-block;">Go to Member Login</a>
+                    <a href="https://www.britishscottishcommunicators.org.uk/login" style="background:#a9843c;color:#0e0d0c;text-decoration:none;padding:12px 22px;border-radius:6px;font-weight:bold;display:inline-block;">Go to Member Login</a>
                   </p>
-                  <p style="margin-top:28px;color:#6b6b6b;font-size:13px;">Questions? Just reply to this email or reach hello@blackscottishcommunicators.org.</p>
+                  <p style="margin-top:28px;color:#6b6b6b;font-size:13px;">Questions? Just reply to this email or reach hello@britishscottishcommunicators.org.uk.</p>
                 </td></tr>
               </table>
             </td></tr>

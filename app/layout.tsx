@@ -14,6 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.britishscottishcommunicators.org.uk"),
   title: "Black Scottish Communicators | Voice. Leadership. Belonging.",
   description:
     "BSC helps Black ethnic minority individuals in Scotland build communication confidence, leadership presence and civic voice through programmes, mentorship and community.",

@@ -37,7 +37,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-ink flex items-center justify-center px-6">
       <div className="w-full max-w-sm bg-[#15130f] border border-white/10 rounded-2xl p-10 text-center">
         <div className="inline-block bg-black/40 border border-white/10 rounded px-3 py-1.5 text-[11px] text-white/40 font-mono mb-6">
-          yoursite.org/admin
+          britishscottishcommunicators.org.uk/admin
         </div>
         <Image src="/brand/logo.png" alt="BSC" width={56} height={56} className="mx-auto rounded-lg mb-4 object-cover" />
         <h1 className="font-display text-xl text-white mb-1.5">Staff sign-in</h1>
@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
           <input
             type="email"
             required
-            placeholder="you@blackscottishcommunicators.org"
+            placeholder="you@britishscottishcommunicators.org.uk"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full rounded-md border border-white/15 bg-black/30 px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 outline-none focus-visible:ring-1 focus-visible:ring-gold"
