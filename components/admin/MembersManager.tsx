@@ -122,16 +122,16 @@ export function MembersManager({ initialMembers }: { initialMembers: Member[] })
           </thead>
           <tbody>
             {filtered.length === 0 && (
-              <tr><td colSpan={5} className="px-4 py-8 text-center text-charcoal/50">No members yet — they&apos;ll appear here as people join BSC.</td></tr>
+              <tr><td colSpan={5} className="px-4 py-8 text-center text-charcoal/50">No members yet - they&apos;ll appear here as people join BSC.</td></tr>
             )}
             {filtered.map((m) => (
               <tr key={m.id} className="border-t border-ink/5 hover:bg-parchment/50">
                 <td className="px-4 py-3">
                   <div className="font-medium">{m.first_name} {m.last_name}</div>
-                  <div className="text-xs text-charcoal/50">{m.member_number ?? "—"} · {m.email}</div>
+                  <div className="text-xs text-charcoal/50">{m.member_number ?? "-"} · {m.email}</div>
                 </td>
-                <td className="px-4 py-3">{m.hubs?.name ?? "—"}</td>
-                <td className="px-4 py-3">{m.organisation ?? "—"}</td>
+                <td className="px-4 py-3">{m.hubs?.name ?? "-"}</td>
+                <td className="px-4 py-3">{m.organisation ?? "-"}</td>
                 <td className="px-4 py-3">
                   <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-semibold ${
                     m.status === "active" ? "bg-emerald-50 text-emerald-700" : m.status === "pending" ? "bg-amber-50 text-amber-700" : "bg-red-50 text-red-700"

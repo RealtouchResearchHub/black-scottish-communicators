@@ -68,7 +68,7 @@ export function SiteFooter({
             </div>
             <p className="text-sm leading-relaxed max-w-xs mb-5">
               Building communication confidence, leadership presence and civic
-              voice for Black Scottish communities — Belonging, Leadership,
+              voice for Black Scottish communities - Belonging, Leadership,
               Advancement, Collaboration, Knowledge.
             </p>
             {socialLinks.length > 0 && (

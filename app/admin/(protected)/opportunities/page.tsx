@@ -6,8 +6,8 @@ export default function AdminOpportunitiesPage() {
       title="Opportunities board"
       description="Jobs, boards, speaking, funding and fellowships."
       cards={[
-        { label: "Open opportunities", value: "—" },
-        { label: "Applications this month", value: "—" },
+        { label: "Open opportunities", value: "-" },
+        { label: "Applications this month", value: "-" },
       ]}
     />
   );

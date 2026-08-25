@@ -69,7 +69,7 @@ export function AdminSidebar({ logoUrl }: { logoUrl?: string }) {
             <br />
             Communicators
           </h1>
-          <p className="text-[11px] text-gold-light/70">Admin — /admin</p>
+          <p className="text-[11px] text-gold-light/70">Admin - /admin</p>
         </div>
       </div>
       <nav>

@@ -6,9 +6,9 @@ export default function AdminMentoringPage() {
       title="Mentorship engine"
       description="Match by goals, sector, experience, hub and availability."
       cards={[
-        { label: "Approved mentors", value: "—" },
-        { label: "Active matches", value: "—" },
-        { label: "Awaiting match", value: "—" },
+        { label: "Approved mentors", value: "-" },
+        { label: "Active matches", value: "-" },
+        { label: "Awaiting match", value: "-" },
       ]}
     />
   );

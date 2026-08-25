@@ -6,7 +6,7 @@ import { getSiteContent } from "@/lib/site-content";
 const values = [
   { letter: "B", word: "Belonging", copy: "A community where Black Scottish voices are seen, heard and rooted." },
   { letter: "L", word: "Leadership", copy: "Building the presence and confidence to lead in any room." },
-  { letter: "A", word: "Advancement", copy: "Real progression — career, civic, and platform." },
+  { letter: "A", word: "Advancement", copy: "Real progression - career, civic, and platform." },
   { letter: "C", word: "Collaboration", copy: "Growing together across Scotland's hubs and beyond." },
   { letter: "K", word: "Knowledge", copy: "Skills, mentorship and craft that compound over time." },
 ];
@@ -56,7 +56,7 @@ export default async function HomePage() {
             <span className="text-xs tracking-[0.2em] uppercase text-thistle whitespace-nowrap">Our Values</span>
           </div>
           <h2 className="font-display text-4xl sm:text-5xl text-ink mb-14 max-w-2xl">
-            BLACK — five commitments behind everything we build.
+            BLACK - five commitments behind everything we build.
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {values.map((v) => (
@@ -79,7 +79,7 @@ export default async function HomePage() {
             </h2>
             <p className="text-parchment/70 leading-relaxed max-w-md">
               BSC brings together Black professionals, creatives, communicators
-              and emerging leaders from across Scotland — city ambassadors,
+              and emerging leaders from across Scotland - city ambassadors,
               mentors and members, in the same room, building something
               together.
             </p>

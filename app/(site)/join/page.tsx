@@ -110,7 +110,7 @@ export default function JoinPage() {
             <p className="text-charcoal/80 leading-relaxed">
               We&apos;ve sent a secure sign-in link to <strong>{form.email}</strong>.
               Open it on this device to confirm your email and finish
-              creating your BSC profile — your details are saved and waiting.
+              creating your BSC profile - your details are saved and waiting.
             </p>
           </div>
         </section>

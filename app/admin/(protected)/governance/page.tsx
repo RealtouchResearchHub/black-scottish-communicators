@@ -6,8 +6,8 @@ export default function AdminGovernancePage() {
       title="Board & governance portal"
       description="Separate governance accountability from day-to-day operations."
       cards={[
-        { label: "Statutory actions due", value: "—" },
-        { label: "Conflicts register", value: "—" },
+        { label: "Statutory actions due", value: "-" },
+        { label: "Conflicts register", value: "-" },
       ]}
     />
   );

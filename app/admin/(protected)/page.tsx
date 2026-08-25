@@ -31,7 +31,7 @@ export default async function AdminDashboard() {
         <h1 className="font-display text-3xl mb-2">Welcome to the BSC control centre.</h1>
         <p className="text-white/70 text-sm max-w-2xl">
           Manage members, hubs, events, programmes, the team page and every
-          word of copy on the public site — all from here.
+          word of copy on the public site - all from here.
         </p>
       </div>
 
@@ -61,7 +61,7 @@ export default async function AdminDashboard() {
 
       <p className="text-xs text-charcoal/40 mt-10">
         This dashboard reflects live data from Supabase. Mentoring,
-        opportunities, partner CRM and funding pipeline are visual previews —
+        opportunities, partner CRM and funding pipeline are visual previews -
         their real backends are planned for Phase 2.
       </p>
     </div>

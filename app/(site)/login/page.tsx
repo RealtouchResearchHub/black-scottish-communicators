@@ -42,7 +42,7 @@ export default function LoginPage() {
           {sent ? (
             <p className="text-charcoal/80 text-center leading-relaxed">
               We&apos;ve sent a secure sign-in link to <strong>{email}</strong>.
-              Open it on this device to sign in — no password needed.
+              Open it on this device to sign in - no password needed.
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">

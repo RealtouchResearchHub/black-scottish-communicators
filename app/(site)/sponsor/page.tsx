@@ -6,7 +6,7 @@ export default function SponsorPage() {
       <PageHero
         eyebrow="Sponsor BSC"
         title="Invest in Black Scottish voices."
-        intro="Sponsorship funds programmes, hub events and Founding 100 membership access — with clear reporting back on the impact of your support."
+        intro="Sponsorship funds programmes, hub events and Founding 100 membership access - with clear reporting back on the impact of your support."
       />
       <section className="py-20 bg-parchment">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">

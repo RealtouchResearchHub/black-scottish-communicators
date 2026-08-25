@@ -7,9 +7,9 @@ import { createClient } from "@/lib/supabase/server";
 const ICONS = [Mic, Handshake, MessageCircle, Radio, Target];
 
 const fallbackProgrammes = [
-  { title: "Public Speaking & Leadership Workshops", description: "Hands-on sessions building the confidence and technique to speak and lead with presence — in meetings, on stage, and in your career." },
+  { title: "Public Speaking & Leadership Workshops", description: "Hands-on sessions building the confidence and technique to speak and lead with presence - in meetings, on stage, and in your career." },
   { title: "Mentorship Programme", description: "One-to-one relationships pairing members with mentors across sectors, matched to real goals and reviewed for progress along the way." },
-  { title: "Community Storytelling Events", description: "Live spaces to share your story and hear others' — building community while sharpening your own voice." },
+  { title: "Community Storytelling Events", description: "Live spaces to share your story and hear others' - building community while sharpening your own voice." },
   { title: "Digital Media Training", description: "Practical training in building visibility and communicating confidently across digital and media platforms." },
   { title: "Behavioural Assessment, Debriefing & Coaching", description: "Structured coaching to understand your communication style and turn insight into practical growth." },
 ];
@@ -31,7 +31,7 @@ export default async function ProgrammesPage() {
       <PageHero
         eyebrow="Programmes"
         title="Five paths to a stronger voice."
-        intro="Every BSC programme is built to move you from where you are to where you want to be — with people who show up for you along the way."
+        intro="Every BSC programme is built to move you from where you are to where you want to be - with people who show up for you along the way."
       />
       <section className="py-20 bg-parchment">
         <div className="mx-auto max-w-5xl px-5 sm:px-8 space-y-6">

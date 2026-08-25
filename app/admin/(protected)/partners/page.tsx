@@ -6,9 +6,9 @@ export default function AdminPartnersPage() {
       title="Corporate & institutional CRM"
       description="Employers, councils, funders, universities and sponsors."
       cards={[
-        { label: "Leads", value: "—" },
-        { label: "In proposal", value: "—" },
-        { label: "Won partnerships", value: "—" },
+        { label: "Leads", value: "-" },
+        { label: "In proposal", value: "-" },
+        { label: "Won partnerships", value: "-" },
       ]}
     />
   );

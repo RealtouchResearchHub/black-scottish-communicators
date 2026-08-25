@@ -22,7 +22,7 @@ export default async function MembershipPage() {
       <PageHero
         eyebrow="Membership"
         title="Membership built for where you are."
-        intro="Every BSC membership starts with a real profile, clear consent, and a place in the community — not a WhatsApp link. Choose the tier that fits you."
+        intro="Every BSC membership starts with a real profile, clear consent, and a place in the community - not a WhatsApp link. Choose the tier that fits you."
       />
       <section className="py-20 bg-parchment">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -61,7 +61,7 @@ export default async function MembershipPage() {
           <div className="mt-16 max-w-2xl mx-auto text-center">
             <p className="text-sm text-charcoal/60 flex items-center justify-center gap-2">
               <Check size={16} className="text-gold" />
-              Sponsored and student/community concession memberships may be available — contact BSC to ask.
+              Sponsored and student/community concession memberships may be available - contact BSC to ask.
             </p>
           </div>
         </div>

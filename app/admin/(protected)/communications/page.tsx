@@ -6,8 +6,8 @@ export default function AdminCommunicationsPage() {
       title="Communications centre"
       description="Segmented messages through email, WhatsApp and portal notifications."
       cards={[
-        { label: "Campaigns sent", value: "—" },
-        { label: "Estimated audience", value: "—" },
+        { label: "Campaigns sent", value: "-" },
+        { label: "Estimated audience", value: "-" },
       ]}
     />
   );

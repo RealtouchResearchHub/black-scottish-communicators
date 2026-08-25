@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     const fromAddress = process.env.RESEND_FROM_ADDRESS || "Black Scottish Communicators <hello@realtouchhr.com>";
 
     if (!apiKey) {
-      // Not configured yet — fail quietly so signup itself is never blocked.
+      // Not configured yet - fail quietly so signup itself is never blocked.
       console.warn("RESEND_API_KEY not set; skipping welcome email.");
       return NextResponse.json({ skipped: true });
     }
@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
                       <p style="margin:0;font-size:15px;font-weight:bold;color:#0e0d0c;">${email}</p>
                     </td></tr>
                   </table>
-                  <p>BSC uses secure, passwordless sign-in — no password to remember. Just visit the Member Login page, enter this email, and we'll send you a one-time secure link.</p>
+                  <p>BSC uses secure, passwordless sign-in - no password to remember. Just visit the Member Login page, enter this email, and we'll send you a one-time secure link.</p>
                   <p style="margin-top:24px;">
                     <a href="https://www.britishscottishcommunicators.org.uk/login" style="background:#a9843c;color:#0e0d0c;text-decoration:none;padding:12px 22px;border-radius:6px;font-weight:bold;display:inline-block;">Go to Member Login</a>
                   </p>

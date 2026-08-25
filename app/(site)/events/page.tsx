@@ -28,7 +28,7 @@ export default async function EventsPage() {
       <PageHero
         eyebrow="Events"
         title="Community, in person and online."
-        intro="Workshops, storytelling nights and hub meetups — open to members and, where noted, the public."
+        intro="Workshops, storytelling nights and hub meetups - open to members and, where noted, the public."
       />
       <section className="py-20 bg-parchment">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">

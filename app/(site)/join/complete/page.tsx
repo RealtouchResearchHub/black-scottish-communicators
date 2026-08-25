@@ -90,7 +90,7 @@ export default function JoinCompletePage() {
 
       localStorage.removeItem("bsc_join_draft");
       setStatus("done");
-      setMessage("Welcome to BSC — your profile is ready.");
+      setMessage("Welcome to BSC - your profile is ready.");
       setTimeout(() => router.replace("/member"), 1500);
     }
 

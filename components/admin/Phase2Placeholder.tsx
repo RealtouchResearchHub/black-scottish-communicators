@@ -26,8 +26,8 @@ export function Phase2Placeholder({
         ))}
       </div>
       <p className="text-xs text-charcoal/40 mt-8">
-        This module is a visual preview. Its live backend — with its own
-        database tables and workflows — is planned for Phase 2 of the build.
+        This module is a visual preview. Its live backend - with its own
+        database tables and workflows - is planned for Phase 2 of the build.
       </p>
     </div>
   );

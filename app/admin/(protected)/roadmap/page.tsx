@@ -1,7 +1,7 @@
 export default function AdminRoadmapPage() {
   const phases = [
     {
-      title: "Phase 1 — Foundation (this build)",
+      title: "Phase 1 - Foundation (this build)",
       color: "border-gold",
       items: [
         "Public website + Founding 100 funnel",
@@ -13,7 +13,7 @@ export default function AdminRoadmapPage() {
       ],
     },
     {
-      title: "Phase 2 — Experience",
+      title: "Phase 2 - Experience",
       color: "border-thistle",
       items: [
         "Mentor matching, opportunities board",
@@ -23,7 +23,7 @@ export default function AdminRoadmapPage() {
       ],
     },
     {
-      title: "Phase 3 — Intelligence & Scale",
+      title: "Phase 3 - Intelligence & Scale",
       color: "border-saltire",
       items: [
         "AI opportunity & mentor matching",

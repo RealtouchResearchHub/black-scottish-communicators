@@ -13,7 +13,7 @@ export default function ImpactPage() {
       <PageHero
         eyebrow="Impact"
         title="Evidence, not anecdotes."
-        intro="BSC tracks outcomes from day one — registrations, attendance, completion, and self-reported confidence change — so our impact is measurable, not assumed."
+        intro="BSC tracks outcomes from day one - registrations, attendance, completion, and self-reported confidence change - so our impact is measurable, not assumed."
       />
       <section className="py-20 bg-parchment">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -31,7 +31,7 @@ export default function ImpactPage() {
               At programme baseline and again at completion, members are
               invited to self-report on public speaking confidence, interview
               confidence, leadership readiness, ability to contribute in
-              meetings, and professional network strength — each on a 1–10
+              meetings, and professional network strength - each on a 1–10
               scale. As BSC&apos;s community grows, this dashboard will show real,
               aggregated results.
             </p>

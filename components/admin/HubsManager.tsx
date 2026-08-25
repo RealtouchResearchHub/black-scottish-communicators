@@ -104,7 +104,7 @@ export function HubsManager({ initialHubs }: { initialHubs: Hub[] }) {
       </div>
 
       <AdminModal open={open} title={editingId ? "Edit hub" : "New hub"} onClose={() => setOpen(false)}>
-        <FieldLabel>Cover image (optional — falls back to skyline art)</FieldLabel>
+        <FieldLabel>Cover image (optional - falls back to skyline art)</FieldLabel>
         <ImageUpload value={form.cover_image_url} onChange={(url) => setForm({ ...form, cover_image_url: url })} folder="hubs" />
         <FieldLabel>Hub name</FieldLabel>
         <input className={inputClass} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />

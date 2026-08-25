@@ -6,8 +6,8 @@ export default function AdminFundingPage() {
       title="Funding pipeline"
       description="Deadlines, eligibility and stage in one place."
       cards={[
-        { label: "Open applications", value: "—" },
-        { label: "Total requested", value: "—" },
+        { label: "Open applications", value: "-" },
+        { label: "Total requested", value: "-" },
       ]}
     />
   );

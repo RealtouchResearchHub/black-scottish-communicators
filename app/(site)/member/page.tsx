@@ -48,7 +48,7 @@ export default async function MemberDashboard() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
-          <StatCard label="Member number" value={member.member_number ?? "—"} />
+          <StatCard label="Member number" value={member.member_number ?? "-"} />
           <StatCard label="Membership" value={membership?.membership_tiers?.name ?? "Pending"} />
           <StatCard label="Hub" value={member.hubs?.name ?? "Not set"} />
           <StatCard label="Status" value={member.status.charAt(0).toUpperCase() + member.status.slice(1)} />

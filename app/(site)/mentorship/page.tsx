@@ -7,7 +7,7 @@ export default function MentorshipPage() {
       <PageHero
         eyebrow="Mentorship"
         title="Guided by people who've walked the path."
-        intro="BSC's mentorship programme pairs members with mentors matched to real goals — sector, experience, and what you're actually trying to build."
+        intro="BSC's mentorship programme pairs members with mentors matched to real goals - sector, experience, and what you're actually trying to build."
       />
       <section className="py-20 bg-parchment">
         <div className="mx-auto max-w-3xl px-5 sm:px-8 space-y-8">

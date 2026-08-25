@@ -80,7 +80,7 @@ export function TiersManager({ initialTiers }: { initialTiers: Tier[] }) {
       <AdminModal open={open} title={`Edit ${editing?.name ?? "tier"}`} onClose={() => setOpen(false)}>
         {editing?.is_founding && (
           <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-md px-3 py-2 mb-3">
-            This is the Founding 100 tier — its free lifetime promise should not be changed lightly.
+            This is the Founding 100 tier - its free lifetime promise should not be changed lightly.
           </p>
         )}
         <FieldLabel>Price (£, per year)</FieldLabel>
