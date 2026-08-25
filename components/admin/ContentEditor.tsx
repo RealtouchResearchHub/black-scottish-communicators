@@ -12,6 +12,11 @@ export function ContentEditor({ initial }: { initial: Record<string, string> }) 
   const [aboutCopy, setAboutCopy] = useState(initial.about_copy ?? "");
   const [contactEmail, setContactEmail] = useState(initial.contact_email ?? "");
   const [logoUrl, setLogoUrl] = useState<string | null>(initial.logo_url || null);
+  const [facebookUrl, setFacebookUrl] = useState(initial.facebook_url ?? "");
+  const [instagramUrl, setInstagramUrl] = useState(initial.instagram_url ?? "");
+  const [xUrl, setXUrl] = useState(initial.x_url ?? "");
+  const [tiktokUrl, setTiktokUrl] = useState(initial.tiktok_url ?? "");
+  const [youtubeUrl, setYoutubeUrl] = useState(initial.youtube_url ?? "");
   const [saving, setSaving] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -89,6 +94,46 @@ export function ContentEditor({ initial }: { initial: Record<string, string> }) 
             className="mt-3 rounded-md bg-gold text-ink font-semibold text-sm px-4 py-2 hover:bg-gold-light disabled:opacity-50"
           >
             Save
+          </button>
+        </div>
+
+        <div className="rounded-xl border border-ink/10 bg-white p-5 sm:col-span-2">
+          <h3 className="font-display text-lg text-ink mb-3">Social media</h3>
+          <p className="text-xs text-charcoal/50 mb-4">Only networks with a link filled in will show as icons in the footer.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div>
+              <FieldLabel>Facebook</FieldLabel>
+              <input className={inputClass} value={facebookUrl} onChange={(e) => setFacebookUrl(e.target.value)} placeholder="https://facebook.com/…" />
+            </div>
+            <div>
+              <FieldLabel>Instagram</FieldLabel>
+              <input className={inputClass} value={instagramUrl} onChange={(e) => setInstagramUrl(e.target.value)} placeholder="https://instagram.com/…" />
+            </div>
+            <div>
+              <FieldLabel>X (Twitter)</FieldLabel>
+              <input className={inputClass} value={xUrl} onChange={(e) => setXUrl(e.target.value)} placeholder="https://x.com/…" />
+            </div>
+            <div>
+              <FieldLabel>TikTok</FieldLabel>
+              <input className={inputClass} value={tiktokUrl} onChange={(e) => setTiktokUrl(e.target.value)} placeholder="https://tiktok.com/@…" />
+            </div>
+            <div>
+              <FieldLabel>YouTube</FieldLabel>
+              <input className={inputClass} value={youtubeUrl} onChange={(e) => setYoutubeUrl(e.target.value)} placeholder="https://youtube.com/@…" />
+            </div>
+          </div>
+          <button
+            onClick={() => {
+              saveKey("facebook_url", facebookUrl);
+              saveKey("instagram_url", instagramUrl);
+              saveKey("x_url", xUrl);
+              saveKey("tiktok_url", tiktokUrl);
+              saveKey("youtube_url", youtubeUrl);
+            }}
+            disabled={saving !== null}
+            className="mt-4 rounded-md bg-gold text-ink font-semibold text-sm px-4 py-2 hover:bg-gold-light disabled:opacity-50"
+          >
+            Save social links
           </button>
         </div>
       </div>

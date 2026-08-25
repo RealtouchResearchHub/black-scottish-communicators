@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Facebook, Instagram, Youtube, Twitter, Music2 } from "lucide-react";
 
 const columns = [
   {
@@ -32,8 +33,30 @@ const columns = [
   },
 ];
 
-export function SiteFooter({ logoUrl, contactEmail }: { logoUrl?: string; contactEmail?: string }) {
+export function SiteFooter({
+  logoUrl,
+  contactEmail,
+  social,
+}: {
+  logoUrl?: string;
+  contactEmail?: string;
+  social?: {
+    facebook_url?: string;
+    instagram_url?: string;
+    x_url?: string;
+    tiktok_url?: string;
+    youtube_url?: string;
+  };
+}) {
   const src = logoUrl || "/brand/logo.png";
+  const socialLinks = [
+    { url: social?.facebook_url, icon: Facebook, label: "Facebook" },
+    { url: social?.instagram_url, icon: Instagram, label: "Instagram" },
+    { url: social?.x_url, icon: Twitter, label: "X" },
+    { url: social?.tiktok_url, icon: Music2, label: "TikTok" },
+    { url: social?.youtube_url, icon: Youtube, label: "YouTube" },
+  ].filter((s) => s.url);
+
   return (
     <footer className="bg-ink text-parchment/70 border-t border-gold/20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16">
@@ -43,11 +66,27 @@ export function SiteFooter({ logoUrl, contactEmail }: { logoUrl?: string; contac
               <Image src={src} alt="BSC logo" width={34} height={34} className="rounded-md h-8 w-8 object-cover" />
               <span className="font-display text-lg text-parchment">Black Scottish Communicators</span>
             </div>
-            <p className="text-sm leading-relaxed max-w-xs">
+            <p className="text-sm leading-relaxed max-w-xs mb-5">
               Building communication confidence, leadership presence and civic
               voice for Black Scottish communities — Belonging, Leadership,
               Advancement, Collaboration, Knowledge.
             </p>
+            {socialLinks.length > 0 && (
+              <div className="flex items-center gap-3">
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-parchment/20 hover:border-gold-light hover:text-gold-light transition-colors"
+                  >
+                    <s.icon size={15} />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {columns.map((col) => (

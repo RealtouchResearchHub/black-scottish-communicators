@@ -5,23 +5,32 @@ export function PageHero({
   title,
   intro,
   logoUrl,
+  backgroundImage,
 }: {
   eyebrow: string;
   title: string;
   intro?: string;
   logoUrl?: string;
+  backgroundImage?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-ink text-parchment">
-      <div className="hidden sm:block absolute right-10 top-1/2 -translate-y-1/2 w-32 h-32 pointer-events-none">
-        <Image
-          src={logoUrl || "/brand/logo.png"}
-          alt=""
-          width={128}
-          height={128}
-          className="w-full h-full object-contain rounded-2xl shadow-2xl border border-white/10"
-        />
-      </div>
+      {backgroundImage ? (
+        <>
+          <Image src={backgroundImage} alt="" fill priority className="object-cover" />
+          <div className="absolute inset-0 bg-ink/70" />
+        </>
+      ) : (
+        <div className="hidden sm:block absolute right-10 top-1/2 -translate-y-1/2 w-32 h-32 pointer-events-none">
+          <Image
+            src={logoUrl || "/brand/logo.png"}
+            alt=""
+            width={128}
+            height={128}
+            className="w-full h-full object-contain rounded-2xl shadow-2xl border border-white/10"
+          />
+        </div>
+      )}
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 py-20 sm:py-24">
         <span className="text-xs tracking-[0.2em] uppercase text-gold-light">
           {eyebrow}

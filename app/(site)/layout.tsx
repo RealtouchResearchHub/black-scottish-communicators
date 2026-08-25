@@ -10,7 +10,17 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
     <>
       <SiteNav logoUrl={content.logo_url} />
       <main className="flex-1">{children}</main>
-      <SiteFooter logoUrl={content.logo_url} contactEmail={content.contact_email} />
+      <SiteFooter
+        logoUrl={content.logo_url}
+        contactEmail={content.contact_email}
+        social={{
+          facebook_url: content.facebook_url,
+          instagram_url: content.instagram_url,
+          x_url: content.x_url,
+          tiktok_url: content.tiktok_url,
+          youtube_url: content.youtube_url,
+        }}
+      />
       <BscAssistant />
     </>
   );

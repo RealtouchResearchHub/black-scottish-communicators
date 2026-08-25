@@ -8,6 +8,11 @@ export const SITE_CONTENT_DEFAULTS: Record<string, string> = {
     "BSC exists to help Black ethnic minority individuals in Scotland develop communication confidence, public-speaking capability, leadership presence, digital voice, mentoring relationships, visibility, career progression and civic and professional influence.",
   contact_email: "hello@britishscottishcommunicators.org.uk",
   logo_url: "",
+  facebook_url: "",
+  instagram_url: "",
+  x_url: "",
+  tiktok_url: "",
+  youtube_url: "",
 };
 
 export async function getSiteContent(): Promise<Record<string, string>> {

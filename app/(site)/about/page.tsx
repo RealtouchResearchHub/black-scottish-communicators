@@ -11,6 +11,7 @@ export default async function AboutPage() {
         eyebrow="About BSC"
         title="Black Scottish Communicators"
         intro="A Community Interest Company built around one belief: that communication confidence changes what's possible — for a person, and for a community."
+        backgroundImage="/images/brand-banner.jpg"
       />
       <section className="py-20 bg-parchment">
         <div className="mx-auto max-w-4xl px-5 sm:px-8 space-y-16">

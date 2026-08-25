@@ -70,6 +70,31 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="bg-ink py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-[1fr_1.1fr] gap-12 items-center">
+          <div>
+            <span className="text-xs tracking-[0.2em] uppercase text-gold-light">Community</span>
+            <h2 className="font-display text-3xl sm:text-4xl text-parchment mt-3 mb-5">
+              Real conversations. A room that gets it.
+            </h2>
+            <p className="text-parchment/70 leading-relaxed max-w-md">
+              BSC brings together Black professionals, creatives, communicators
+              and emerging leaders from across Scotland — city ambassadors,
+              mentors and members, in the same room, building something
+              together.
+            </p>
+          </div>
+          <div className="relative rounded-lg overflow-hidden aspect-[3/2]">
+            <Image
+              src="/images/community-gathering.jpg"
+              alt="BSC members and ambassadors in conversation"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-thistle text-parchment py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="max-w-xl text-center lg:text-left">
